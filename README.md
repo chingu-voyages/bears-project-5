@@ -1,2 +1,2 @@
-# bears-project-5
-Chingu Voyage Project
+# Fitness App
+Chingu Voyage Project - Team 5 (Bears)
