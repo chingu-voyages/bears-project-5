@@ -1,0 +1,19 @@
+{
+  "name": "fitness-app",
+  "version": "1.0.0",
+  "description": "fitness app made by chingu voyage",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chingu-voyages/bears-project-5.git"
+  },
+  "author": "Bears-05",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chingu-voyages/bears-project-5/issues"
+  },
+  "homepage": "https://github.com/chingu-voyages/bears-project-5#readme"
+}
