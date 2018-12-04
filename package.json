@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "format": "prettier --write **.js",
-    "lint": "eslint **/*.js",
+    "lint": "eslint --fix **.js",
     "start": "node server.js",
     "server": "nodemon server.js"
   },
@@ -29,5 +29,17 @@
     "eslint": "^5.9.0",
     "nodemon": "^1.18.7",
     "prettier": "1.15.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "npm run format",
+      "npm run lint",
+      "git add"
+    ]
   }
 }
