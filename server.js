@@ -6,7 +6,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-const db = require('./server/keys').mongoURI;
+const db = require('./keys').mongoURI;
 mongoose
     .connect(db, {useNewUrlParser: true})
     .then(() => console.log('Connected'))
