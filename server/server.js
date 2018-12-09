@@ -1,15 +1,16 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const items = require("./routes/api/items");
 const expressGraphQL = require('express-graphql');
-const schema = require("./schema.js");
+// const schema = require("./schema.js");
 
 const app = express();
-
+const db = require("./keys").mongoURI;
 app.use(bodyParser.json());
 
-const db = require("./keys").mongoURI;
+app.use('/graphql', expressGraphQL({
+  
+}));
 
 /* eslint-disable no-console */
 mongoose
@@ -19,15 +20,7 @@ mongoose
   )
   .then(() => console.log("Connected"))
   .catch(err => console.log(err));
-//use REST routes
-// app.use('/api/items', items);
 
-//use GraphQL
-
-app.use('/graphql', expressGraphQL({
-  schema: schema,
-  graphiql: true
-}));
 
 
 

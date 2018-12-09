@@ -8,8 +8,14 @@ const {
 } = require('graphql');
 
 
-const RootQuery = new GraphQLObjectType({
+const FoodQuery = new GraphQLObjectType({
+    name: 'Food',
+    fields: ()=>({
+        id: {type: GraphQLString},
+        name: {type: GraphQLString},
+        kcal: {type: GraphQLInt}
 
+    });
 });
 
 
