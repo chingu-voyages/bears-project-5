@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const expressGraphQL = require('express-graphql');
 const schema = require("./schema.js");
+const Food = require("./models/food");
 
 const app = express();
 const db = require("./keys").mongoURI;
@@ -14,15 +15,17 @@ app.use('/graphql', expressGraphQL({
 }));
 
 /* eslint-disable no-console */
-// mongoose
-//   .connect(
-//     db,
-//     { useNewUrlParser: true }
-//   )
-//   .then(() => console.log("Connected"))
-//   .catch(err => console.log(err));
+mongoose
+  .connect(
+    db,
+    { useNewUrlParser: true }
+  )
+  .then(() => console.log("Connected to database"))
+  .catch(err => console.log(err));
 
-
+app.get("/", (req,res)=>{
+  res.send("welcome on blank page!")
+});
 
 
 const port = process.env.PORT || 5000;
