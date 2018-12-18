@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
 import './App.css';
-import SignUpForm from './pages/SignUpForm.js';
-import SignInForm from './pages/SignInForm.js'
-import LandingPage from './pages/LandingPage';
+import SignUpForm from './components/SignUpForm.js';
+import SignInForm from './components/SignInForm.js'
+import Home from './components/Home';
 
 class App extends Component {
   render() {
@@ -16,11 +16,11 @@ class App extends Component {
               <NavLink href="#" exact to="/signup" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Sign Up</NavLink>
             </div>        
         <hr />
-        <h1> Fitness App</h1>
+        <h1> Fitness  App</h1>
 
           <Route  path="/signup" component={SignUpForm}/>
           <Route path="/signin" component={SignInForm} />
-          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/" component={Home} />
         
         </div>
       </Router>
