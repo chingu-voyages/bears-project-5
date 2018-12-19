@@ -2,13 +2,14 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const expressGraphQL = require('express-graphql');
+const cors = require("cors");
 const schema = require("./schema.js");
 const Food = require("./models/food");
 
 const app = express();
 const db = require("./keys").mongoURI;
 app.use(bodyParser.json());
-
+app.use(cors());
 app.use('/graphql', expressGraphQL({
   schema,
   graphiql: true

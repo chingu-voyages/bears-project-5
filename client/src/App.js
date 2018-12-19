@@ -32,8 +32,9 @@ class App extends Component {
         
         </div>
       </Router>
+      </ApolloProvider>
     );
-    </ApolloProvider>
+    
   }
 }
 
