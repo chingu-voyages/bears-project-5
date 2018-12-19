@@ -4,10 +4,18 @@ import './App.css';
 import SignUpForm from './components/SignUpForm.js';
 import SignInForm from './components/SignInForm.js'
 import Home from './components/Home';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
+
+const client = new ApolloClient({
+  uri: 'http://localhost:5000/graphql'
+})
+
 
 class App extends Component {
   render() {
     return (
+      <ApolloProvider client={client}>
       <Router>
         <div className="container">
             <div className="PageSwitcher">
@@ -25,6 +33,7 @@ class App extends Component {
         </div>
       </Router>
     );
+    </ApolloProvider>
   }
 }
 
