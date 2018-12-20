@@ -98,10 +98,16 @@ const RootQuery = new GraphQLObjectType({
   description: "root query",
   fields: {
     food: {
-      type: FoodType,
-      args: { id: { type: GraphQLID } },
+      type: new GraphQLList(FoodType),
+      args: { id: { type: GraphQLID }, name: {type: GraphQLString} },
       resolve(parent, args) {
-        return Food.findById(args.id);
+        if (args.id) {
+          return [Food.findById(args.id)];
+        }
+        if (args.name) {
+          return Food.find({name:args.name});
+        }
+        return Food.find();
       }
     },
     userFoods: {
