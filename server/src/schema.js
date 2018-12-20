@@ -1,4 +1,3 @@
-const _ = require("lodash");
 const Food = require("./models/food");
 const {
   GraphQLObjectType,
@@ -10,7 +9,7 @@ const {
   GraphQLNonNull
 } = require("graphql");
 
-const userWeightType = new GraphQLObjectType({
+const UserWeightType = new GraphQLObjectType({
   name: "userWeight",
   fields: {
     weightInGrams: { type: GraphQLInt },
@@ -18,7 +17,7 @@ const userWeightType = new GraphQLObjectType({
   }
 });
 
-const userGoalType = new GraphQLObjectType({
+const UserGoalType = new GraphQLObjectType({
   name: "goal",
   fields: {
     date: { type: GraphQLInt },
@@ -33,8 +32,8 @@ const UserType = new GraphQLObjectType({
     id: { type: GraphQLID },
     firstName: { type: GraphQLString },
     lastName: { type: GraphQLString },
-    weight: { type: new GraphQLList(userWeightType) },
-    goals: { type: new GraphQLList(userGoalType) }
+    weight: { type: new GraphQLList(UserWeightType) },
+    goals: { type: new GraphQLList(UserGoalType) }
   }
 });
 
