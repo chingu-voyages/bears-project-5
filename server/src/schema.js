@@ -8,7 +8,7 @@ const {
   GraphQLList,
   GraphQLNonNull
 } = require("graphql");
-
+//test
 const UserWeightType = new GraphQLObjectType({
   name: "userWeight",
   fields: {
