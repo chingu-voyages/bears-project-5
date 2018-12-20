@@ -1,34 +1,37 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const expressGraphQL = require('express-graphql');
+const expressGraphQL = require("express-graphql");
 const cors = require("cors");
 const schema = require("./schema.js");
-const Food = require("./models/food");
 
 const app = express();
-const db = require("./keys").mongoURI;
 app.use(bodyParser.json());
 app.use(cors());
-app.use('/graphql', expressGraphQL({
-  schema,
-  graphiql: true
-}));
+app.use(
+  "/graphql",
+  expressGraphQL({
+    schema,
+    graphiql: true
+  })
+);
 
-/* eslint-disable no-console */
+const db = require("./keys").mongoURI;
 mongoose
   .connect(
     db,
     { useNewUrlParser: true }
   )
+  // eslint-disable-next-line no-console
   .then(() => console.log("Connected to database"))
+  // eslint-disable-next-line no-console
   .catch(err => console.log(err));
 
-app.get("/", (req,res)=>{
-  res.send("welcome on blank page!")
+app.get("/", (req, res) => {
+  res.send("welcome on blank page!");
 });
 
-
 const port = process.env.PORT || 5000;
+
+// eslint-disable-next-line no-console
 app.listen(port, () => console.log("Server running on port " + port));
-/* eslint-enable no-console */
