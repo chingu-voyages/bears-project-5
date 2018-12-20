@@ -1,0 +1,48 @@
+{
+  "name": "fitness-app",
+  "version": "1.0.0",
+  "description": "fitness app made by chingu voyage",
+  "main": "server.js",
+  "scripts": {
+    "format": "prettier --write src/**/*.js",
+    "lint": "eslint --fix src/**/*.js",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chingu-voyages/bears-project-5.git"
+  },
+  "author": "Bears-05",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chingu-voyages/bears-project-5/issues"
+  },
+  "homepage": "https://github.com/chingu-voyages/bears-project-5#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.0.2",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "nodemon": "^1.18.7",
+    "prettier": "1.15.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
