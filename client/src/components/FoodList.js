@@ -6,6 +6,7 @@ const getFoodQuery = gql`
 query{
     food{
       name
+      kcal
     }
   }
 `
@@ -19,7 +20,7 @@ var data = this.props.data;
         return (<div>Food loading...</div>)
     } else{
         return data.food.map(food=>{
-            return (<li>{food.name}</li>)
+            return (<li>{food.name}, {`kcal: ${food.kcal}`}</li>)
         });
     }
 }

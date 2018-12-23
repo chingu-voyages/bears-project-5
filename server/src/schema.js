@@ -63,6 +63,7 @@ const FoodType = new GraphQLObjectType({
   description: "Food",
   fields: () => ({
     id: { type: GraphQLID },
+    kcal: {type: GraphQLInt},
     name: { type: new GraphQLNonNull(GraphQLString) },
     caloryPerFoodUnits: { type: new GraphQLList(CaloryPerFoodUnitType) }
   })
