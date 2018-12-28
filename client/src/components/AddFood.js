@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { addFood} from '../queries/queries';
+import { addFood, getFoodQuery} from '../queries/queries';
 import { graphql} from 'react-apollo';
 
 
@@ -23,7 +23,8 @@ submitForm(e){
         variables:{
             name: this.state.name,
             kcal: this.state.kcal
-            }
+            },
+            refetchQueries: [{query: getFoodQuery}]
         });
 
     console.log(this.props);
