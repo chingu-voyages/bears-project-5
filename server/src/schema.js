@@ -127,7 +127,7 @@ const Mutation = new GraphQLObjectType({
       type: FoodType,
       args: {
         name: { type: new GraphQLNonNull(GraphQLString) },
-        kcal: { type: new GraphQLNonNull(GraphQLInt) }
+        kcal: { type: new GraphQLNonNull(GraphQLString) }
       },
       resolve(parent, args) {
         let food = new Food({

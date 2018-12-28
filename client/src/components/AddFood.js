@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { addFood} from '../queries/queries';
 import { graphql} from 'react-apollo';
 
+
 class AddFood extends Component {
 
     constructor(props){
@@ -13,6 +14,9 @@ class AddFood extends Component {
     }
 //functions
 
+
+
+
 submitForm(e){
     e.preventDefault();
     this.props.addFood({
@@ -21,12 +25,15 @@ submitForm(e){
             kcal: this.state.kcal
             }
         });
+
+    console.log(this.props);
     
     
 }
     render(){
                 
         return(
+            
             <div>
                 <p>form to create new food</p>
                 <form id="add-food" onSubmit={this.submitForm.bind(this)}>
@@ -56,4 +63,6 @@ submitForm(e){
 
 }
 
-export default graphql(addFood)(AddFood);
+export default graphql(addFood, {
+    name: "addFood"
+})(AddFood);

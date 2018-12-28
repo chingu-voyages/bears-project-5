@@ -10,7 +10,7 @@ query{
 `
 
 const addFood = gql`
-mutation($name: String!, $kcal: Number!){
+mutation($name: String!, $kcal: String!){
     addFood(name: $name, kcal: $kcal){
       name
       kcal
