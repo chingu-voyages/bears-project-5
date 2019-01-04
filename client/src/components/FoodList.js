@@ -5,9 +5,7 @@ import {getFoodQuery} from '../queries/queries';
 class FoodList extends Component {
 
     displayFood(){
-        console.log(this.props);
         var data = this.props.data;
-        console.log(this.props);
             if(data.loading){
                 return (<div>Food loading...</div>)
             } else{

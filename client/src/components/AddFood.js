@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { addFood, getFoodQuery} from '../queries/queries';
 import { graphql} from 'react-apollo';
-
+import Calories from './Calories';
 
 class AddFood extends Component {
 
@@ -9,7 +9,8 @@ class AddFood extends Component {
         super(props);
             this.state = {
                 name: "",
-                kcal: ""   
+                kcal: "",
+                totalKcal: 0
             }
     }
 //functions
@@ -18,6 +19,12 @@ class AddFood extends Component {
 
 
 submitForm(e){
+    let value = parseInt(this.state.kcal);
+    var newValue = value + (this.state.totalKcal);
+    alert(value);
+    alert(newValue); 
+
+    console.log(e)
     e.preventDefault();
     this.props.addFood({
         variables:{
@@ -25,17 +32,20 @@ submitForm(e){
             kcal: this.state.kcal
             },
             refetchQueries: [{query: getFoodQuery}]
-        });
-
-    console.log(this.props);
-    
-    
+        });   
+        this.setState({
+            totalKcal: newValue
+        }) 
 }
+
+
+
     render(){
-                
         return(
             
             <div>
+                <Calories totalKcal={this.state.totalKcal}/>
+
                 <p>form to create new food</p>
                 <form id="add-food" onSubmit={this.submitForm.bind(this)}>
                     <div className="field">
