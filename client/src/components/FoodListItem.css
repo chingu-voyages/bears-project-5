@@ -1,0 +1,26 @@
+.FoodListItem {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-template-columns: auto 1fr auto;
+}
+
+.FoodListItem__image {
+  border-radius: 50%;
+  grid-row: 1 / -1;
+  grid-column: 1;
+}
+
+.FoodListItem__title {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.FoodListItem__subTitle {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.FoodListItem__calories {
+  grid-row: 1 / -1;
+  grid-column: 3;
+}
