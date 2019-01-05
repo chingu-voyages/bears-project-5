@@ -5,33 +5,6 @@ import { FoodListItem } from './FoodListItem'
 import './FoodList.css'
 
 class FoodList extends Component {
-<<<<<<< HEAD
-
-    displayFood(){
-        var data = this.props.data;
-            if(data.loading){
-                return (<div>Food loading...</div>)
-            } else{
-                return data.food.map(food=>{
-                    return (<li key={food.id}>{food.name}, {`kcal: ${food.kcal}`}</li>)
-                });
-            }
-    }
-
-
-    render(){
-
-        return(
-            
-            <div>
-                <ul>
-                    {this.displayFood()}
-                </ul>
-            </div>
-        )
-    }
-
-=======
   render() {
     const { data } = this.props
     console.log(data)
@@ -55,7 +28,6 @@ class FoodList extends Component {
       </div>
     )
   }
->>>>>>> f420f383ed681b458b0ad02a516d2530e8c2deab
 }
 
 export default graphql(getFoodQuery)(FoodList)
