@@ -1,0 +1,17 @@
+.CaloriesCounter {
+  border-radius: 50%;
+  padding: 2rem;
+  border: 1px solid currentColor;
+}
+
+.CaloriesCounter__caloriesTitle {
+  font-size: 4em;
+}
+
+.CaloriesCounter__caloriesSubtitle {
+  font-size: 1em;
+}
+
+.CaloriesCounter__caloriesLeft {
+  font-size: 0.8em;
+}

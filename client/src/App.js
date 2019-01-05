@@ -1,41 +1,32 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
-import './App.css';
-import SignUpForm from './components/SignUpForm.js';
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import ApolloClient from 'apollo-boost'
+import { ApolloProvider } from 'react-apollo'
+import SignUpForm from './components/SignUpForm.js'
 import SignInForm from './components/SignInForm.js'
-import Home from './components/Home';
-import ApolloClient from 'apollo-boost';
-import { ApolloProvider } from 'react-apollo';
+import { NavBar } from './components/NavBar.js'
+import { Home } from './components/Home'
+import './App.css'
 
 const client = new ApolloClient({
   uri: 'http://localhost:5000/graphql'
 })
 
-
 class App extends Component {
   render() {
     return (
       <ApolloProvider client={client}>
-      <Router>
-        <div className="container">
-            <div className="PageSwitcher">
-              <NavLink href="#" to="/" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Home</NavLink>
-              <NavLink href="#" to="/signin" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Sign In</NavLink>
-              <NavLink href="#" exact to="/signup" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Sign Up</NavLink>
-            </div>        
-        <hr />
-        <h1> Fitness  App</h1>
-
-          <Route  path="/signup" component={SignUpForm}/>
-          <Route path="/signin" component={SignInForm} />
-          <Route exact path="/" component={Home} />
-        
-        </div>
-      </Router>
+        <Router>
+          <>
+            <NavBar />
+            <Route path="/signup" component={SignUpForm} />
+            <Route path="/signin" component={SignInForm} />
+            <Route exact path="/" component={Home} />
+          </>
+        </Router>
       </ApolloProvider>
-    );
-    
+    )
   }
 }
 
-export default App;
+export default App
