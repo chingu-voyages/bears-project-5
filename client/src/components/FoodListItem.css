@@ -1,7 +1,16 @@
 .FoodListItem {
+  padding: 1rem;
+
   display: grid;
+  grid-gap: 0 4rem;
   grid-template-rows: repeat(2, auto);
   grid-template-columns: auto 1fr auto;
+
+  align-items: center;
+
+  border: 1px solid currentColor;
+
+  font-size: 0.8em;
 }
 
 .FoodListItem__image {

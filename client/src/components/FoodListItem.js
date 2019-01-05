@@ -8,7 +8,7 @@ export function FoodListItem({ image, title, subTitle, caloryCount }) {
         alt=""
         height="20"
         width="20"
-        className="FoodListItem__title"
+        className="FoodListItem__image"
       />
       <div className="FoodListItem__title">{title}</div>
       <div className="FoodListItem__subTitle">{subTitle}</div>
