@@ -3,7 +3,7 @@ import FoodList from './FoodList'
 import { CaloriesCounter } from './CaloriesCounter'
 import AddFood from './AddFood'
 import './Home.css'
-class LandingPage extends Component {
+export class Home extends Component {
   render() {
     const date = new Date()
     return (
@@ -16,5 +16,3 @@ class LandingPage extends Component {
     )
   }
 }
-
-export default LandingPage

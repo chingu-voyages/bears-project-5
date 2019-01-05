@@ -4,6 +4,14 @@
   border: 1px solid currentColor;
 }
 
-.CaloriesCounter__calories {
+.CaloriesCounter__caloriesTitle {
   font-size: 4em;
+}
+
+.CaloriesCounter__caloriesSubtitle {
+  font-size: 1em;
+}
+
+.CaloriesCounter__caloriesLeft {
+  font-size: 0.8em;
 }
