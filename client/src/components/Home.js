@@ -1,19 +1,20 @@
-import React, { Component } from 'react';
-import FoodList from './FoodList';
-import Calories from './Calories';
-import AddFood from './AddFood';
+import React, { Component } from 'react'
+import FoodList from './FoodList'
+import { CaloriesCounter } from './CaloriesCounter'
+import AddFood from './AddFood'
+import './Home.css'
 class LandingPage extends Component {
   render() {
+    const date = new Date()
     return (
-      <div>
-          <h1>landing page</h1>
-          <Calories/>
-          <AddFood />
-          <FoodList />
-          
+      <div className="Home">
+        <h1>{date.toLocaleDateString()}</h1>
+        <CaloriesCounter consumed={133} limit={2000} />
+        <AddFood />
+        <FoodList />
       </div>
-    );
+    )
   }
 }
 
-export default LandingPage;
+export default LandingPage

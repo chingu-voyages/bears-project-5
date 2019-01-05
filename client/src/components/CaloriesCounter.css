@@ -1,0 +1,9 @@
+.CaloriesCounter {
+  border-radius: 50%;
+  padding: 2rem;
+  border: 1px solid currentColor;
+}
+
+.CaloriesCounter__calories {
+  font-size: 4em;
+}
