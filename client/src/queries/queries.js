@@ -11,7 +11,7 @@ query{
 `
 
 const searchFoodQuery = gql `
-query{
+query($name: String!){
   food(name: $name){
     name
     kcal
