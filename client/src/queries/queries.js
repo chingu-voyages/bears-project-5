@@ -3,11 +3,23 @@ import { gql } from 'apollo-boost';
 const getFoodQuery = gql`
 query{
     food{
+      id
       name
       kcal
     }
   }
 `
+
+const searchFoodQuery = gql `
+query{
+  food(name: $name){
+    name
+    kcal
+  }
+}
+`
+
+
 
 const addFood = gql`
 mutation($name: String!, $kcal: String!){
@@ -19,4 +31,4 @@ mutation($name: String!, $kcal: String!){
   
 `
 
-export {getFoodQuery, addFood};
+export {getFoodQuery, addFood, searchFoodQuery};

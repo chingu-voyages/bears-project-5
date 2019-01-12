@@ -3,7 +3,7 @@ import FoodList from './FoodList'
 import { CaloriesCounter } from './CaloriesCounter'
 import AddFood from './AddFood'
 import './Home.css'
-
+import SearchFood from './SearchFood'
 
 export class Home extends Component {
   render() {
@@ -14,6 +14,7 @@ export class Home extends Component {
         <CaloriesCounter consumed={133} limit={2000} />
         <AddFood />
         <FoodList />
+        <SearchFood />
       </div>
     )
   }

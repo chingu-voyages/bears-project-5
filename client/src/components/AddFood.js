@@ -21,8 +21,7 @@ class AddFood extends Component {
 submitForm(e){
     let value = parseInt(this.state.kcal);
     var newValue = value + (this.state.totalKcal);
-    alert(value);
-    alert(newValue); 
+    
 
     console.log(e)
     e.preventDefault();
